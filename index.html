@@ -38,16 +38,16 @@
         </div>
     </header>
 
-    <main>
-        <section class="flex flex-wrap mx-16  gap-12 md:mx-28 lg:mx-auto ">
+    <main class="bg-slate-50  ">
+        <section class="flex flex-wrap   gap-3  mx-auto  container  pt-10  ">
             <!-- card portion -->
 
              <div>
                             <!-- first row of cart -->
-            <div class="my-10  space-y-10 lg:px-12">
+            <div class="my-10  space-y-10 px-20 md:px-16 lg:px-12 ">
                 
                 <h1 class="text-2xl font-bold ">Kitchenware</h1>
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:ml-4  ">
+                <div class="grid grid-cols-1 md:gap-20 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 md:ml-4 space-y-6 md:space-y-0  ">
                     <div class="card md:w-64  bg-base-100 shadow-xl">
                         <div class="bg-slate-200 m-6 p-10">
                             <figure><img class="h-[120px]" src="images/prod1.png" alt="Shoes" /></figure>
@@ -111,10 +111,10 @@
                 </div>
             </div>
              <!-- 2nd row of cart -->
-            <div class="my-10  space-y-10 lg:px-12">
+            <div class="my-10 mx-auto px-20  space-y-10 md:px-16 lg:px-12">
                
-                <h1 class="text-2xl font-bold ">Furniture</h1>
-                <div class="grid grid-cols-1 gap-6 md:ml-4 md:grid-cols-2 lg:grid-cols-3 ">
+                <h1 class="text-2xl font-bold  ">Furniture</h1>
+                <div class="grid grid-cols-1 md:gap-20 lg:gap-4 md:ml-4 md:grid-cols-2 lg:grid-cols-3 space-y-6 md:space-y-0 ">
                     <div class="card md:w-64  bg-base-100 shadow-xl">
                         <div class="bg-slate-200 m-6 p-10">
                             <figure><img class="h-[120px]" src="images/prod7.png" alt="Shoes" /></figure>
@@ -179,16 +179,20 @@
             </div>
              </div>
             <!-- cart portion -->
-            <div class="space-y-4 mt-6  lg:mt-32">
-              <h1 class="font-semibold">Have coupon?</h1>
+            <div class="space-y-4 mt-6 mx-auto md:mx-0 md:pl-16 lg:pl-0  lg:mt-28 ">
+              <div class="bg-white px-6 py-8 rounded-lg">
+                <h1 class="font-semibold mb-2">Have coupon?</h1>
               <div class="join">
                 <input class="input input-bordered join-item" placeholder="Coupon code"/>
-                <button class="btn  bg-gradient-to-r from-green-700 to-yellow-400 text-whit join-item ">Apply</button>
+                <button class="btn  bg-gradient-to-r from-green-700 to-yellow-400 text-white join-item ">Apply</button>
               </div>
-              <p>Total price: 0 TK</p>
-              <p>Discount : 0 TK</p>
-              <p>Total: 0 TK</p>
-              <button class="btn  bg-gradient-to-r from-green-700 to-yellow-400 text-whit w-full  ">Make Purchase</button>
+              </div>
+              <div class=" space-y-4 bg-white px-6 py-8 rounded-lg">
+              <p><span class="font-bold">Total price : </span> 0 TK</p>
+              <p><span class="font-bold">Discount :</span> 0 TK</p>
+              <p><span class="font-bold">Total :</span> 0 TK</p>
+              <button class="btn border-none  bg-gradient-to-r from-green-700 to-yellow-400 text-white w-full  ">Make Purchase</button>
+              </div>
             </div>
         </section>
     </main>
