@@ -191,7 +191,19 @@
               <p><span class="font-bold">Total price : </span> 0 TK</p>
               <p><span class="font-bold">Discount :</span> 0 TK</p>
               <p><span class="font-bold">Total :</span> 0 TK</p>
-              <button class="btn border-none  bg-gradient-to-r from-green-700 to-yellow-400 text-white w-full  ">Make Purchase</button>
+              <button class=" btn border-none  bg-gradient-to-r from-green-700 to-yellow-400 text-white w-full" onclick="my_modal_1.showModal()">Make Purchase</button>
+              <!-- modal -->
+<dialog id="my_modal_1" class="modal">
+  <form method="dialog" class="modal-box flex flex-col justify-center items-center py-16">
+    <img class="w-24 mb-4" src="images/congo.png" alt="">
+    <h3 class="font-bold text-3xl">Congratulations</h3>
+    <p class="py-4 text-gray-500">Your Purchase the product</p>
+    <div class="modal-action">
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn btn border-none  bg-gradient-to-r from-green-700 to-yellow-400 text-white w-28">Go Home</button>
+    </div>
+  </form>
+</dialog>
               </div>
             </div>
         </section>
