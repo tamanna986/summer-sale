@@ -24,7 +24,7 @@ function calculateTotalPrice(itemPrice) {
 
     const discounts = TotalPrice * 0.2;
     const discount = discounts.toFixed(2);
-    
+
     // discount price without cupon code
     document.getElementById('discount-price').innerText = 0;
 
@@ -32,6 +32,17 @@ function calculateTotalPrice(itemPrice) {
 
     const totalsBeforeDiscount = TotalPrice;
     document.getElementById('total').innerText = totalsBeforeDiscount;
+
+    //  after clicking go home button  resetting values
+    document.getElementById('go-home').addEventListener('click', function () {
+        const resetTotalPrice = 0;
+        const resetDescountPrice = 0;
+        const resetTotal = 0;
+        document.getElementById('total-price').innerText = resetTotalPrice;
+        document.getElementById('discount-price').innerText = resetDescountPrice;
+        document.getElementById('total').innerText = resetTotal;
+
+    })
 
 
     // apply cupon field 
@@ -60,15 +71,6 @@ function calculateTotalPrice(itemPrice) {
             })
         }
 
-        //  after clicking go home button  resetting values
-        document.getElementById('go-home').addEventListener('click', function () {
-            const totalPriceInitial = 0;
-            const totalInitial = 0;
-            const totaldiscount = 0;
-            document.getElementById('total-price').innerText = totalPriceInitial;
-            document.getElementById('total').innerText = totalInitial;
-            document.getElementById('discount-price').innerText = totaldiscount;
-        })
 
     })
 
@@ -150,13 +152,19 @@ function calculateSofaPrice() {
 }
 
 // dynamically creating cart items name
-function cartItems(itemName){
-   const cartList =  document.getElementById('cart-list');
-   cartList.classList.add('bg-white' , 'p-2');
-   const count = cartList.childElementCount;
-   const p = document.createElement('p');
-   p.classList.add('m-4', 'font-semibold');
-   p.innerHTML = `${count + 1}.  ${itemName}` ;
+function cartItems(itemName) {
+    const cartList = document.getElementById('cart-list');
+    cartList.classList.add('bg-white', 'p-2');
+    const count = cartList.childElementCount;
+    const p = document.createElement('p');
+    p.classList.add('m-4', 'font-semibold');
+    p.innerHTML = `${count + 1}.  ${itemName}`;
 
-   cartList.appendChild(p);
+    cartList.appendChild(p);
+
+    document.getElementById('go-home').addEventListener('click', function () {
+        cartList.classList.remove('bg-white', 'p-2');
+        cartList.innerText = '';
+
+    })
 }
