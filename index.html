@@ -49,7 +49,7 @@
                     <h1 class="text-2xl font-bold ">Kitchenware</h1>
                     <div
                         class="grid grid-cols-1 md:gap-20 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 md:ml-4 space-y-6 md:space-y-0  ">
-                        <div class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
+                        <div  onclick="calculateAccessories1()" class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img class="h-[120px]" src="images/prod1.png" alt="Shoes" /></figure>
                             </div>
@@ -64,12 +64,12 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">K. Accessories</h2>
-                                <p class="text-gray-500">25.00 TK</p>
+                                <p class="text-gray-500"> <span id="Accessories-price1">25.00</span> TK</p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
                         </div>
-                        <div class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
+                        <div onclick="calculateHomeCooker()" class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img src="images/prod2.png" alt="Shoes" /></figure>
                             </div>
@@ -84,12 +84,12 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">Home Cooker</h2>
-                                <p class="text-gray-500">49.00 TK TK</p>
+                                <p class="text-gray-500"><span id="cooker-price">49.00</span> TK</p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
                         </div>
-                        <div class="card md:w-64 md:h-96 bg-base-100 shadow-xl">
+                        <div onclick="calculateAccessories2()" class="card md:w-64 md:h-96 bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img src="images/prod3.png" alt="Shoes" /></figure>
                             </div>
@@ -104,7 +104,7 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">K. Accessories</h2>
-                                <p class="text-gray-500">39.00 TK</p>
+                                <p class="text-gray-500"><span id="Accessories-price2">39.00</span> TK</p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                     <h1 class="text-2xl font-bold  ">Furniture</h1>
                     <div
                         class="grid grid-cols-1 md:gap-20 lg:gap-4 md:ml-4 md:grid-cols-2 lg:grid-cols-3 space-y-6 md:space-y-0 ">
-                        <div class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
+                        <div onclick="calculateChair()" class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img class="h-[120px]" src="images/prod7.png" alt="Shoes" /></figure>
                             </div>
@@ -132,12 +132,12 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">Single Relax Chair</h2>
-                                <p class="text-gray-500">185.00 TK</p>
+                                <p class="text-gray-500"><span id="chair-price">185.00</span> TK</p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
                         </div>
-                        <div class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
+                        <div onclick="calculateChildrenPlay()" class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img class="h-[120px]" src="images/prod8.png" alt="Shoes" /></figure>
                             </div>
@@ -152,12 +152,12 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">Children play</h2>
-                                <p class="text-gray-500">299.00 TK </p>
+                                <p class="text-gray-500"><span id="chidrenPlay-price">299.00</span> TK </p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
                         </div>
-                        <div class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
+                        <div onclick="calculateSofaPrice()" class="card md:w-64 md:h-96  bg-base-100 shadow-xl">
                             <div class="bg-slate-200 m-6 p-10">
                                 <figure><img class="h-[120px]" src="images/prod9.png" alt="Shoes" /></figure>
                             </div>
@@ -172,7 +172,7 @@
                                 </div>
                                 </p>
                                 <h2 class="card-title text-xl">Flexible Sofa</h2>
-                                <p class="text-gray-500">339.00 TK </p>
+                                <p class="text-gray-500"><span id="sofa-price">339.00</span> TK </p>
                                 <div class="card-actions justify-end">
                                 </div>
                             </div>
@@ -191,10 +191,10 @@
                     </div>
                 </div>
                 <div class=" space-y-4 bg-white px-6 py-8 rounded-lg">
-                    <p><span class="font-bold">Total price : </span> 0 TK</p>
-                    <p><span class="font-bold">Discount :</span> 0 TK</p>
+                    <p><span class="font-bold">Total price : </span> <span id="total-price">0</span> TK</p>
+                    <p><span class="font-bold">Discount :</span><span id="discount-price">0</span> TK</p>
                     <p><span class="font-bold">Total :</span> 0 TK</p>
-                    <button disabled
+                    <button disabled id="purchase-btn"
                         class=" btn border-none bg-green-700 hover:bg-gradient-to-r from-green-700 to-yellow-400 text-white w-full"
                         onclick="my_modal_1.showModal()">Make Purchase</button>
                     <!-- modal -->
