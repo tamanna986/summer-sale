@@ -193,7 +193,7 @@
                 <div class=" space-y-4 bg-white px-6 py-8 rounded-lg">
                     <p><span class="font-bold">Total price : </span> <span id="total-price">0</span> TK</p>
                     <p><span class="font-bold">Discount :</span><span id="discount-price">0</span> TK</p>
-                    <p><span class="font-bold">Total :</span> 0 TK</p>
+                    <p><span class="font-bold">Total :</span> <span id="total">0</span> TK</p>
                     <button disabled id="purchase-btn"
                         class=" btn border-none bg-green-700 hover:bg-gradient-to-r from-green-700 to-yellow-400 text-white w-full"
                         onclick="my_modal_1.showModal()">Make Purchase</button>
@@ -205,7 +205,7 @@
                             <p class="py-4 text-gray-500">Your Purchase the product</p>
                             <div class="modal-action">
                                 <!-- if there is a button in form, it will close the modal -->
-                                <button
+                                <button onclick="goHome()"
                                     class="btn btn border-none bg-green-700  hover:bg-gradient-to-r from-green-700 to-yellow-400 text-white w-28">Go
                                     Home</button>
                             </div>

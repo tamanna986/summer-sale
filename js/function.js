@@ -1,5 +1,5 @@
 
-// common funtion to calculate value inside div
+// common function to calculate value inside div
 
 function divValue(fieldId) {
     const divText = document.getElementById(fieldId);
@@ -16,55 +16,66 @@ function calculateTotalPrice(itemPrice) {
     const totalPrice = divValue('total-price');
 
     const TotalPrices = totalPrice + itemPrice;
-    const TotalPrice = TotalPrices .toFixed(2);
+    const TotalPrice = TotalPrices.toFixed(2);
     document.getElementById('total-price').innerText = TotalPrice;
 
 
     // counting discount
 
-    const discounts = TotalPrice*0.2;
+    const discounts = TotalPrice * 0.2;
     const discount = discounts.toFixed(2);
-    
-    console.log( discount);
 
-document.getElementById('cupon-input').addEventListener('keyup', function(event){
-    const text = event.target.value;
-    
-    if (text === 'SELL200'){
-        document.getElementById('btn-apply').addEventListener('click',function(){
+    // counting final total Before discount
 
-            document.getElementById('discount-price').innerText = discount;
-        })
+    const totalsBeforeDiscount = TotalPrice;
+    document.getElementById('total').innerText = totalsBeforeDiscount;
+
+
+    // apply cupon field 
+    document.getElementById('cupon-input').addEventListener('keyup', function (event) {
+        const text = event.target.value;
+
+        if (text === 'SELL200') {
+            document.getElementById('btn-apply').addEventListener('click', function () {
+                // setting total discount
+                document.getElementById('discount-price').innerText = discount;
+
+                // setting total value after discount
+                const totals = TotalPrice - discount;
+                const total = totals.toFixed(2);
+                document.getElementById('total').innerText = total;
+
+
+            })
+        }
+
+
+    })
+
+
+
+    // checking total price to enable purchase button
+    const purchase = document.getElementById('purchase-btn');
+    if (TotalPrice > 0) {
+        purchase.removeAttribute('disabled');
     }
-        
-})
+    else {
+        purchase.setAttribute('disabled', true);
+    }
 
-// counting final total
-
-    // TT
-
-        // checking total price to enable purchase button
-        const purchase = document.getElementById('purchase-btn');
-        if(TotalPrice > 0){
-            purchase.removeAttribute('disabled');
-        }
-        else{
-            purchase.setAttribute('disabled', true);
-        }
-
-         // checking total price to enable apply button
-         const applyButton = document.getElementById('btn-apply');
-         if (TotalPrice >= 200) {
-             applyButton.removeAttribute('disabled');
-         }
-         else {
-             applyButton.setAttribute('disabled', true);
-         }
+    // checking total price to enable apply button
+    const applyButton = document.getElementById('btn-apply');
+    if (TotalPrice >= 200) {
+        applyButton.removeAttribute('disabled');
+    }
+    else {
+        applyButton.setAttribute('disabled', true);
+    }
 
 
-      
 
-         
+
+
 }
 
 
@@ -94,8 +105,8 @@ document.getElementById('cupon-input').addEventListener('keyup', function(event)
 function calculateAccessories1() {
     const AccessoriesPrice1 = divValue('Accessories-price1');
     const presentTotalPrice = calculateTotalPrice(AccessoriesPrice1);
-    
-    
+
+
 }
 
 // calculate home cooker
@@ -125,7 +136,7 @@ function calculateChildrenPlay() {
 }
 
 // calculate sofa price
-function calculateSofaPrice(){
+function calculateSofaPrice() {
     const sofaPrice = divValue('sofa-price');
     const presentTotalPrice = calculateTotalPrice(sofaPrice);
 }
