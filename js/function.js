@@ -15,8 +15,33 @@ function divValue(fieldId) {
 function calculateTotalPrice(itemPrice) {
     const totalPrice = divValue('total-price');
 
-    const TotalPrice = totalPrice + itemPrice;
+    const TotalPrices = totalPrice + itemPrice;
+    const TotalPrice = TotalPrices .toFixed(2);
     document.getElementById('total-price').innerText = TotalPrice;
+
+
+    // counting discount
+
+    const discounts = TotalPrice*0.2;
+    const discount = discounts.toFixed(2);
+    
+    console.log( discount);
+
+document.getElementById('cupon-input').addEventListener('keyup', function(event){
+    const text = event.target.value;
+    
+    if (text === 'SELL200'){
+        document.getElementById('btn-apply').addEventListener('click',function(){
+
+            document.getElementById('discount-price').innerText = discount;
+        })
+    }
+        
+})
+
+// counting final total
+
+    // TT
 
         // checking total price to enable purchase button
         const purchase = document.getElementById('purchase-btn');
@@ -35,29 +60,42 @@ function calculateTotalPrice(itemPrice) {
          else {
              applyButton.setAttribute('disabled', true);
          }
+
+
+      
+
+         
 }
 
 
 // cupon part
 
-// document.getElementById('cupon-input').addEventListener('keyup', function (event) {
+// new try
+
+// document.getElementById('cupon-input').addEventListener('keyup', function(event){
 //     const text = event.target.value;
-//     const applyButton = document.getElementById('btn-apply');
-//     if (text === 'SELL200') {
-//         applyButton.removeAttribute('disabled');
-//     }
-//     else {
-//         applyButton.setAttribute('disabled', true);
+//     const discountPrice = divValue('discount-price');
+//     if (text === 'SELL200'){
+//         document.getElementById('btn-apply').addEventListener('click',function()){
+//             newdiscountPrice = TotalPrice*0.2;
+//             discountPrice.innerText = newdiscountPrice;
+//         }
 //     }
 // })
+
+
+
+
+
+
 
 
 // calculate AccessoriesPrice1
 function calculateAccessories1() {
     const AccessoriesPrice1 = divValue('Accessories-price1');
     const presentTotalPrice = calculateTotalPrice(AccessoriesPrice1);
-
-
+    
+    
 }
 
 // calculate home cooker
