@@ -24,6 +24,9 @@ function calculateTotalPrice(itemPrice) {
 
     const discounts = TotalPrice * 0.2;
     const discount = discounts.toFixed(2);
+    
+    // discount price without cupon code
+    document.getElementById('discount-price').innerText = 0;
 
     // counting final total Before discount
 
