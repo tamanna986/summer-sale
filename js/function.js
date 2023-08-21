@@ -45,10 +45,27 @@ function calculateTotalPrice(itemPrice) {
                 const total = totals.toFixed(2);
                 document.getElementById('total').innerText = total;
 
+                // setting empty value after clicking apply btn for cupon field
+
+                const newText = document.getElementById('cupon-input');
+                newText.value = '';
+
+
+
+
 
             })
         }
 
+        //  after clicking go home button  resetting values
+        document.getElementById('go-home').addEventListener('click', function () {
+            const totalPriceInitial = 0;
+            const totalInitial = 0;
+            const totaldiscount = 0;
+            document.getElementById('total-price').innerText = totalPriceInitial;
+            document.getElementById('total').innerText = totalInitial;
+            document.getElementById('discount-price').innerText = totaldiscount;
+        })
 
     })
 
@@ -79,25 +96,6 @@ function calculateTotalPrice(itemPrice) {
 }
 
 
-// cupon part
-
-// new try
-
-// document.getElementById('cupon-input').addEventListener('keyup', function(event){
-//     const text = event.target.value;
-//     const discountPrice = divValue('discount-price');
-//     if (text === 'SELL200'){
-//         document.getElementById('btn-apply').addEventListener('click',function()){
-//             newdiscountPrice = TotalPrice*0.2;
-//             discountPrice.innerText = newdiscountPrice;
-//         }
-//     }
-// })
-
-
-
-
-
 
 
 
@@ -105,6 +103,7 @@ function calculateTotalPrice(itemPrice) {
 function calculateAccessories1() {
     const AccessoriesPrice1 = divValue('Accessories-price1');
     const presentTotalPrice = calculateTotalPrice(AccessoriesPrice1);
+    const cartItemsName = cartItems('K. Accessories');
 
 
 }
@@ -113,12 +112,15 @@ function calculateAccessories1() {
 function calculateHomeCooker() {
     const CookerPrice = divValue('cooker-price');
     const presentTotalPrice = calculateTotalPrice(CookerPrice);
+    const cartItemsName = cartItems('Home Cooker');
+
 }
 
 // calculate AccessoriesPrice2
 function calculateAccessories2() {
     const AccessoriesPrice2 = divValue('Accessories-price2');
     const presentTotalPrice = calculateTotalPrice(AccessoriesPrice2);
+    const cartItemsName = cartItems('K. Accessories');
 
 
 }
@@ -127,16 +129,31 @@ function calculateAccessories2() {
 function calculateChair() {
     const chairPrice = divValue('chair-price');
     const presentTotalPrice = calculateTotalPrice(chairPrice);
+    const cartItemsName = cartItems('Single Relax Chair');
 }
 
 // calculate ChildrenPlay
 function calculateChildrenPlay() {
     const ChildrenPlayPrice = divValue('chidrenPlay-price');
     const presentTotalPrice = calculateTotalPrice(ChildrenPlayPrice);
+    const cartItemsName = cartItems('Children Play');
 }
 
 // calculate sofa price
 function calculateSofaPrice() {
     const sofaPrice = divValue('sofa-price');
     const presentTotalPrice = calculateTotalPrice(sofaPrice);
+    const cartItemsName = cartItems('Flexible Sofa');
+}
+
+// dynamically creating cart items name
+function cartItems(itemName){
+   const cartList =  document.getElementById('cart-list');
+   cartList.classList.add('bg-white' , 'p-2');
+   const count = cartList.childElementCount;
+   const p = document.createElement('p');
+   p.classList.add('m-4', 'font-semibold');
+   p.innerHTML = `${count + 1}.  ${itemName}` ;
+
+   cartList.appendChild(p);
 }
